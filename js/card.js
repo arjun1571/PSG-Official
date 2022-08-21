@@ -24,7 +24,7 @@ const playerObj6={
     image: "https://images.psg.media/media/27046/card-season-22-23-marquinhos.png?center=0.5,0.5&mode=crop&width=400&height=600&quality=75"
 }
 
-// const playerArray = [playerObj1,playerObj2,playerObj3,playerObj4,playerObj5,playerObj6];
+const playerArray = [playerObj1,playerObj2,playerObj3,playerObj4,playerObj5,playerObj6];
 
 function displayCard(player){
     const cardSection = document.getElementById("card-detail");
@@ -43,13 +43,14 @@ function displayCard(player){
     cardSection.appendChild(createDiv);
 }
 
+function displayPlayersArray(arr){
+    for(let i=0; i<arr.length; i++){
+        const element = arr[i];
+        displayCard(element)
+      }
+}
 
-displayCard(playerObj1)
-displayCard(playerObj2)
-displayCard(playerObj3)
-displayCard(playerObj4)
-displayCard(playerObj5)
-displayCard(playerObj6)
+displayPlayersArray(playerArray);
 
 
 
