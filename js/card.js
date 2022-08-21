@@ -28,16 +28,17 @@ const playerArray = [playerObj1,playerObj2,playerObj3,playerObj4,playerObj5,play
 
 function displayCard(player){
     const cardSection = document.getElementById("card-detail");
+    const playerString = JSON.stringify(player)
     const createDiv = document.createElement("div");
     createDiv.innerHTML=`
     <div class="card me-2 mb-3" style="width: 16rem;">
-                            <img src=${player.image} class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">${player.name}</h5>
-                                <p class="card-text"> </p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
+            <img src=${player.image} class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">${player.name}</h5>
+            <p class="card-text"> </p>
+            <button onclick='handlePlayer(${playerString})' class="btn btn-primary">SELECT</button>
+        </div>
+    </div>
     
       `
     cardSection.appendChild(createDiv);
@@ -51,6 +52,10 @@ function displayPlayersArray(arr){
 }
 
 displayPlayersArray(playerArray);
+
+function handlePlayer(ply){
+    console.log(ply.name);
+}
 
 
 
