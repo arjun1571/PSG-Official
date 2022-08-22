@@ -23,7 +23,7 @@
         <div class="text-white  text-center">
             <div class="row mt-auto ">
                 <div class="col-3 ">
-                    <img class="img-fluid mt-4"
+                    <img class="img-fluid" style="height:480px ;"
                         src="https://images.psg.media/media/209026/card-season-22-23-messi.png?center=0.5,0.5&mode=crop&width=400&height=600&quality=75"
                         alt="">
                 </div>
@@ -35,7 +35,7 @@
                     </div>
                 </div>
                 <div class="col-3 ">
-                    <img class="img-fluid mt-4"
+                    <img class="img-fluid" style="height:480px ;"
                         src="https://images.psg.media/media/27046/card-season-22-23-marquinhos.png?center=0.5,0.5&mode=crop&width=400&height=600&quality=75"
                         alt="">
                 </div>
@@ -50,17 +50,30 @@
                 <div class="col-9 d-flex p-4">
                     <div class="d-flex flex-wrap " id="card-detail">
 
-
-
-
                     </div>
                 </div>
                 <div class="col-3 mt-4 ">
                     <div class="border p-4 text-white" style='height:500px ; background-color: #0D0D0D '>
-                        <h1 class="text-center">Selected - V</h1>
+                        <h1 class="text-center">Selected - <span id="total-added-player">0</span></h1>
+                        <div>
+                            <ul id="player-name">
+
+                            </ul>
+                        </div>
                     </div>
-                    <div class="border p-4 text-white mt-3" style='height:500px; background-color: #0D0D0D;'>
+                    <div class="border p-4 text-white mt-3" style='height:550px; background-color: #0D0D0D;'>
                         <h1 class="text-center">Budget</h1>
+                        <div class="mt-2 text-center">
+                            <p class="m-2">Per Player</p><input type="number">
+                            <button class="btn btn-primary m-3">Caluculate</button>
+                            <h3>Player Expenses: </h3>
+                            <p>maanager</p>
+                            <input class="mb-2" type="number">
+                            <p>Coach</p>
+                            <input type="number">
+                            <button class="btn btn-primary m-3">Caluculate Total</button>
+                            <h4>Total: </h4>
+                        </div>
                     </div>
                 </div>
             </div>

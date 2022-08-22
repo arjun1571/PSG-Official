@@ -26,6 +26,8 @@ const playerObj6={
 
 const playerArray = [playerObj1,playerObj2,playerObj3,playerObj4,playerObj5,playerObj6];
 
+const playerNameArray =[];
+
 function displayCard(player){
     const cardSection = document.getElementById("card-detail");
     const playerString = JSON.stringify(player)
@@ -54,7 +56,15 @@ function displayPlayersArray(arr){
 displayPlayersArray(playerArray);
 
 function handlePlayer(ply){
-    console.log(ply.name);
+    const playerName = document.getElementById("player-name");
+    const createList = document.createElement("li");
+    const playerNameList=createList.innerText=ply.name;
+    console.log(playerNameList);
+    playerNameArray.push(playerNameList);
+    // console.log(playerNameArray.length);
+    document.getElementById("total-added-player").innerText = playerNameArray.length;
+    
+    playerName.appendChild(createList);
 }
 
 
