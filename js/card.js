@@ -59,7 +59,7 @@ function handlePlayer(ply){
     const playerName = document.getElementById("player-name");
     const createList = document.createElement("li");
     const playerNameList=createList.innerText=ply.name;
-    console.log(playerNameList);
+    // console.log(playerNameList);
     playerNameArray.push(playerNameList);
     // console.log(playerNameArray.length);
     document.getElementById("total-added-player").innerText = playerNameArray.length;
@@ -72,16 +72,35 @@ function handlePlayer(ply){
 }
 
 document.getElementById("calculate-btn").addEventListener("click",function(){
-    console.log("button cliced");
     const perPlayerValue= document.getElementById("per-player-price");
     const playerValue = perPlayerValue.value;
     const playerNUmber=document.getElementById("total-added-player").innerText;
     const total =playerValue * playerNUmber;
-    console.log(typeof(total));
     const setTotal = document.getElementById("plyer-total");
     setTotal.innerText=total;
 })
 
+document.getElementById("calculate-total-btn").addEventListener("click",function(){
+
+    const managerValue = document.getElementById("manager-value");
+      const managerAmount = managerValue.value;
+      const managerAmountInt =parseInt( managerAmount);
+      const coachValue = document.getElementById("coach-value");
+      const coachAmount = coachValue.value;
+      const coachAmountInt =parseInt(coachAmount);
+      const manageAndCochTotal = managerAmountInt + coachAmountInt;
+      const expence = document.getElementById("plyer-total");
+      const expenceTotal = expence.innerHTML;
+      const expenceTotalInt =parseInt(expenceTotal)
+      const subTotal = manageAndCochTotal + expenceTotalInt;
+    //   console.log(manageAndCochTotal);
+    //   console.log(subTotal); 
+      const totalAmount =document.getElementById("sub-tatal-amount");
+      totalAmount.innerText=subTotal;
+
+
+
+})
 
 
 
