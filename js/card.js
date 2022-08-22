@@ -78,6 +78,7 @@ document.getElementById("calculate-btn").addEventListener("click",function(){
     const total =playerValue * playerNUmber;
     const setTotal = document.getElementById("plyer-total");
     setTotal.innerText=total;
+    perPlayerValue.value="";
 })
 
 document.getElementById("calculate-total-btn").addEventListener("click",function(){
@@ -97,7 +98,9 @@ document.getElementById("calculate-total-btn").addEventListener("click",function
     //   console.log(subTotal); 
       const totalAmount =document.getElementById("sub-tatal-amount");
       totalAmount.innerText=subTotal;
-
+      
+      managerValue.value="";
+      coachValue.value="";
 
 
 })
