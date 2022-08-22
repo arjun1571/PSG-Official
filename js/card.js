@@ -27,10 +27,12 @@ const playerObj6={
 const playerArray = [playerObj1,playerObj2,playerObj3,playerObj4,playerObj5,playerObj6];
 
 const playerNameArray =[];
+const arr=[];
+
 
 function displayCard(player){
     const cardSection = document.getElementById("card-detail");
-    const playerString = JSON.stringify(player)
+    const playerString = JSON.stringify(player);
     const createDiv = document.createElement("div");
     createDiv.innerHTML=`
     <div class="card me-2 mb-3" style="width: 16rem;">
@@ -38,7 +40,7 @@ function displayCard(player){
             <div class="card-body">
             <h5 class="card-title">${player.name}</h5>
             <p class="card-text"> </p>
-            <button onclick='handlePlayer(${playerString})' class="btn btn-primary">SELECT</button>
+            <button onclick='handlePlayer(${playerString})' class="btn-dis btn btn-primary">SELECT</button>
         </div>
     </div>
     
@@ -58,31 +60,29 @@ displayPlayersArray(playerArray);
 function handlePlayer(ply){
     const playerName = document.getElementById("player-name");
     const createList = document.createElement("li");
-    const playerNameList=createList.innerText=ply.name;
-    // console.log(playerNameList);
+    arr.push(createList);
+    const playerNameList=createList.innerHTML=ply.name;
+    console.log(playerNameList);
     playerNameArray.push(playerNameList);
-    // console.log(playerNameArray.length);
-    document.getElementById("total-added-player").innerText = playerNameArray.length;
-    if (playerNameArray.length >= 6) {
+    if (arr.length >=6) {
         alert('you can not buy more than 5 players');
-        return ;
+        return
         }
-    
-    playerName.appendChild(createList);
+  
+        playerName.appendChild(createList);
 }
 
 document.getElementById("calculate-btn").addEventListener("click",function(){
     const perPlayerValue= document.getElementById("per-player-price");
     const playerValue = perPlayerValue.value;
-    const playerNUmber=document.getElementById("total-added-player").innerText;
-    const total =playerValue * playerNUmber;
+    const total =playerValue * arr.length;
     const setTotal = document.getElementById("plyer-total");
     setTotal.innerText=total;
     perPlayerValue.value="";
 })
 
-document.getElementById("calculate-total-btn").addEventListener("click",function(){
 
+document.getElementById("calculate-total-btn").addEventListener("click",function(){
     const managerValue = document.getElementById("manager-value");
       const managerAmount = managerValue.value;
       const managerAmountInt =parseInt( managerAmount);
@@ -94,19 +94,10 @@ document.getElementById("calculate-total-btn").addEventListener("click",function
       const expenceTotal = expence.innerHTML;
       const expenceTotalInt =parseInt(expenceTotal)
       const subTotal = manageAndCochTotal + expenceTotalInt;
-    //   console.log(manageAndCochTotal);
-    //   console.log(subTotal); 
       const totalAmount =document.getElementById("sub-tatal-amount");
       totalAmount.innerText=subTotal;
-      
       managerValue.value="";
       coachValue.value="";
-
-
+      
 })
-
-
-
-
-
 
