@@ -63,10 +63,24 @@ function handlePlayer(ply){
     playerNameArray.push(playerNameList);
     // console.log(playerNameArray.length);
     document.getElementById("total-added-player").innerText = playerNameArray.length;
+    if (playerNameArray.length >= 6) {
+        alert('you can not buy more than 5 players');
+        return ;
+        }
     
     playerName.appendChild(createList);
 }
 
+document.getElementById("calculate-btn").addEventListener("click",function(){
+    console.log("button cliced");
+    const perPlayerValue= document.getElementById("per-player-price");
+    const playerValue = perPlayerValue.value;
+    const playerNUmber=document.getElementById("total-added-player").innerText;
+    const total =playerValue * playerNUmber;
+    console.log(typeof(total));
+    const setTotal = document.getElementById("plyer-total");
+    setTotal.innerText=total;
+})
 
 
 
